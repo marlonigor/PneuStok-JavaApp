@@ -4,6 +4,8 @@
  */
 package pneustok;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author marlo
@@ -15,6 +17,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -83,7 +86,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tirebackground.png"))); // NOI18N
         jLabel5.setText("loginbackground");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 520));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -97,7 +100,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        Object[] options = { "Sim", "Não" };
+        int a = JOptionPane.showOptionDialog(null, "Sair do Sistema?", "Selecione:",
+    JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, 
+    options, options[0]);
+        if (a == 0){
+            System.exit(0);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
