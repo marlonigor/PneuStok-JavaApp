@@ -1,6 +1,8 @@
 package pneustok;
 
+import dao.ConnectionProvider;
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 public class Login extends javax.swing.JFrame {
 
@@ -24,7 +26,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         textEmail = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
+        textPassword = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -50,7 +52,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(textEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 223, 251, -1));
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 300, 251, -1));
+        getContentPane().add(textPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 300, 251, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -88,7 +90,28 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_textEmailActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String name = textEmail.getText();
+        String password = textPassword.getText();
+        
+        int temp = 0;
+        try{
+            Connection con = ConnectionProvider.getCon();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM USER WHERE name='"+name+"' AND password='"+password+"' AND status='Active'");
+            while(rs.next()){
+                temp = 1;
+                setVisible(false);
+                new Home(rs.getString("userType")).setVisible(true);
+            }
+            if (temp == 0){
+                JOptionPane.showMessageDialog(null, "Email ou Senha Incorretos");
+            }
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -144,6 +167,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField textEmail;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField textPassword;
     // End of variables declaration//GEN-END:variables
 }
