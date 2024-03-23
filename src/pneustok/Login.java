@@ -32,7 +32,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        loginbackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,9 +86,9 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 398, 251, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tirebackground.png"))); // NOI18N
-        jLabel5.setText("loginbackground");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 530));
+        loginbackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tirebackground.png"))); // NOI18N
+        loginbackground.setText("loginbackground");
+        getContentPane().add(loginbackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,8 +176,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton loginButton;
+    private javax.swing.JLabel loginbackground;
     private javax.swing.JTextField textPassword;
     private javax.swing.JTextField textUsername;
     // End of variables declaration//GEN-END:variables
