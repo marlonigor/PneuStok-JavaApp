@@ -30,37 +30,36 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         logoutButton = new javax.swing.JButton();
+        productsButton = new javax.swing.JButton();
         homebackground = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(881, 531));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logoutButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
         logoutButton.setText("Logout");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, -1, -1));
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, -1, -1));
+
+        productsButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        productsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tire.png"))); // NOI18N
+        productsButton.setText("Acessar Produtos");
+        productsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                productsButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(productsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
         homebackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tirebackground.png"))); // NOI18N
         getContentPane().add(homebackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 530));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 89, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 39, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1197, 163, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -75,6 +74,10 @@ public class Home extends javax.swing.JFrame {
             new Login().setVisible(true);
         }
     }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void productsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_productsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,7 +116,7 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel homebackground;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logoutButton;
+    private javax.swing.JButton productsButton;
     // End of variables declaration//GEN-END:variables
 }
